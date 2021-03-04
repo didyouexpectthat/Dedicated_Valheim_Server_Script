@@ -17,7 +17,7 @@ echo "$(tput setaf 4)-------------------------------------------------------"
 # Please help improve this script
 # Easy Valheim Server Menu super duper easy
 # Open to other commands that should be used... 
-clear
+#clear
 ###############################################################
 #Only change this if you know what you are doing
 #Valheim Server Install location(Default) 
@@ -138,9 +138,9 @@ function script_check_update() {
         git pull --force
 	echo " Updating"
       	sleep 1
-        cd /opt/Dedicated_Valheim_server_Script/
+        cd "$SCRIPTPATH"
 	chmod +x menu.sh
-        exec "$SCRIPTNAME" "${ARGS[@]}"
+        exec "$SCRIPTPATH"/"$SCRIPTNAME" "${ARGS[@]}"
 
         # Now exit this old instance
         exit 1
